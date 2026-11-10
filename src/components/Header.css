@@ -1,0 +1,19 @@
+.header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	height: 72px;
+	padding: 0 18px;
+	background: #10151f;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.icon-button {
+	width: 36px;
+	height: 36px;
+	border: 0;
+	border-radius: 10px;
+	background: #1a2130;
+	color: white;
+	cursor: pointer;
+}
