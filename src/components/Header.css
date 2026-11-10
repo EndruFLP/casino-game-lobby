@@ -17,3 +17,60 @@
 	color: white;
 	cursor: pointer;
 }
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	gap: 1px;
+	margin-left: 28px;
+	padding: 4px;
+	background: #1a2130;
+	border-radius: 12px;
+}
+
+.nav-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	padding: 6px 12px;
+	background: transparent;
+	color: #9aa6bd;
+	cursor: pointer;
+}
+
+.nav-pill.active {
+	background: linear-gradient(180deg, #5ce8ff 0%, #18c6ea 100%);
+	border-color: #0c6f8c;
+	color: white;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.bonus {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	gap: 1px;
+}
+.bonus-gift {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+	cursor: pointer;
+}
+.bonus-text {
+	display: flex;
+	flex-direction: column;
+}
+.bonus-text strong {
+	font-size: 14px;
+	font-weight: 600;
+}
+.bonus-text span {
+	font-size: 12px;
+	color: #8ea0c0;
+	letter-spacing: 0.08em;
+}
