@@ -74,3 +74,100 @@
 	color: #8ea0c0;
 	letter-spacing: 0.08em;
 }
+
+.header-actions {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	gap: 8px;
+}
+
+.wallet-selector {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	background: #1a2130;
+	color: white;
+	cursor: pointer;
+}
+
+.wallet-selector > svg:first-child {
+	color: #9f8cff;
+}
+
+.header-action-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	background: #1a2130;
+	color: white;
+	cursor: pointer;
+}
+
+.deposit-button {
+	background: linear-gradient(180deg, #5ce8ff 0%, #18c6ea 100%);
+	border-color: #0c6f8c;
+	color: white;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.profile-button {
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 1px solid #1589a6;
+	border-radius: 8px;
+	background: transparent;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.profile-avatar {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.utility-button {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	background: #1a2130;
+	color: #9aa6bd;
+	cursor: pointer;
+}
+
+.notification-button::after {
+	content: '';
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #ff5c7a;
+}
+
+/* //responsivitate */
+@media (max-width: 1100px) {
+	.bonus {
+		display: none;
+	}
+}
+@media (max-width: 800px) {
+	.main-nav {
+		display: none;
+	}
+}
