@@ -2,14 +2,29 @@ import './Header.css';
 import { Spade, RugbyBall, PlayingCardsFan, Bitcoin, ChevronDown, ArrowUpFromLine, Landmark, Bell } from 'lucide-react';
 import giftImage from '../assets/giftBox.png';
 import avatarImage from '../assets/avatar.png';
+import logoImage from '../assets/logo.png';
 
-function Header() {
+type HeaderProps = {
+	isSidebarOpen: boolean;
+	onMenuClick: () => void;
+};
+
+function Header({ isSidebarOpen, onMenuClick }: HeaderProps) {
 	return (
 		<header className="header">
-			<button className="icon-button" type="button">
+			<button
+				className="icon-button"
+				type="button"
+				onClick={onMenuClick}
+				aria-label="Toggle sidebar"
+				aria-controls="sidebar"
+				aria-expanded={isSidebarOpen}
+			>
 				☰
 			</button>
-			<h1>EndruBet</h1>
+			<h1 className="brand">
+				<img className="brand-logo" src={logoImage} alt="EndruBet" />
+			</h1>
 			<nav className="main-nav">
 				<button className="nav-pill  active" type="button">
 					<Spade size={16} />

@@ -8,14 +8,51 @@
 	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.brand {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	margin: 0 0 0 10px;
+}
+
+.brand-logo {
+	display: block;
+	width: auto;
+	height: 32px;
+	object-fit: contain;
+}
+
 .icon-button {
 	width: 36px;
 	height: 36px;
-	border: 0;
+	border: 1px solid transparent;
 	border-radius: 10px;
 	background: #1a2130;
 	color: white;
 	cursor: pointer;
+	transition:
+		transform 160ms ease,
+		background-color 160ms ease,
+		border-color 160ms ease,
+		color 160ms ease,
+		box-shadow 160ms ease;
+}
+
+.icon-button:hover {
+	transform: translateY(-1px);
+	border-color: rgba(42, 215, 232, 0.28);
+	background: rgba(42, 215, 232, 0.1);
+	color: #4de8f5;
+	box-shadow:
+		0 0 12px rgba(42, 215, 232, 0.16),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.icon-button:active {
+	transform: translateY(0) scale(0.95);
+}
+.icon-button:focus-visible {
+	outline: 2px solid rgba(42, 215, 232, 0.65);
+	outline-offset: 2px;
 }
 
 .main-nav {
