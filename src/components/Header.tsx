@@ -1,5 +1,6 @@
 import './Header.css';
-import { Spade, RugbyBall, PlayingCardsFan, Bitcoin, ChevronDown, ArrowUpFromLine, Landmark, Bell } from 'lucide-react';
+import { Spade, RugbyBall, PlayingCardsFan, Bitcoin, ChevronDown, ArrowUpFromLine, Landmark } from 'lucide-react';
+import NotificationsMenu from './NotificationsMenu';
 import giftImage from '../assets/giftBox.png';
 import avatarImage from '../assets/avatar.png';
 import logoImage from '../assets/logo.png';
@@ -69,9 +70,7 @@ function Header({ isSidebarOpen, onMenuClick }: HeaderProps) {
 					<img className="profile-avatar" src={avatarImage} alt="" />
 				</button>
 
-				<button className="utility-button notification-button" type="button" aria-label="Open notifications">
-					<Bell size={17} />
-				</button>
+				<NotificationsMenu />
 			</div>
 		</header>
 	);

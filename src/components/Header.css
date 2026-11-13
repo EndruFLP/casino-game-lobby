@@ -172,31 +172,6 @@
 	object-fit: cover;
 }
 
-.utility-button {
-	position: relative;
-	display: grid;
-	place-items: center;
-	width: 36px;
-	height: 36px;
-	padding: 0;
-	border: 1px solid rgba(255, 255, 255, 0.05);
-	border-radius: 8px;
-	background: #1a2130;
-	color: #9aa6bd;
-	cursor: pointer;
-}
-
-.notification-button::after {
-	content: '';
-	position: absolute;
-	top: 7px;
-	right: 7px;
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	background: #ff5c7a;
-}
-
 /* //responsivitate */
 @media (max-width: 1100px) {
 	.bonus {
