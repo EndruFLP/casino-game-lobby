@@ -1,0 +1,68 @@
+.notification-modal-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: grid;
+	place-items: center;
+	background: rgba(4, 8, 14, 0.72);
+	backdrop-filter: blur(4px);
+}
+
+.notification-modal {
+	position: relative;
+	width: min(620px, calc(100vw - 32px));
+	min-height: 320px;
+	padding: 32px;
+	border: 1px solid rgba(77, 232, 245, 0.18);
+	border-radius: 14px;
+	background-color: #101620;
+	background-image: linear-gradient(rgba(16, 22, 32, 0.94), rgba(16, 22, 32, 0.9)), url('../assets/logo.png');
+	background-position: center;
+	background-size:
+		cover,
+		55% auto;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+
+.notification-modal-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.06);
+	color: #9ca8bb;
+	cursor: pointer;
+}
+
+.notification-modal-close {
+	transition: 160ms ease;
+}
+.notification-modal-close:hover {
+	background: rgba(77, 232, 245, 0.12);
+	color: #4de8f5;
+	box-shadow: 0 0 12px rgba(42, 215, 232, 0.14);
+	transform: rotate(6deg);
+}
+.notification-modal-close:active {
+	transform: scale(0.92);
+}
+
+.notification-modal time {
+	display: block;
+	width: fit-content;
+	margin-top: auto;
+	padding: 6px 9px;
+	border-radius: 6px;
+	background: rgba(42, 215, 232, 0.08);
+	color: #8fe7ee;
+	font-size: 12px;
+	font-weight: 600;
+}
