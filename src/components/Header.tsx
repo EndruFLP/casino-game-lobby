@@ -4,13 +4,16 @@ import NotificationsMenu from './NotificationsMenu';
 import giftImage from '../assets/giftBox.png';
 import avatarImage from '../assets/avatar.png';
 import logoImage from '../assets/logo.png';
+import type { MainSection } from '../types/main-section';
 
 type HeaderProps = {
 	isSidebarOpen: boolean;
 	onMenuClick: () => void;
+	activeSection: MainSection;
+	onSectionChange: (section: MainSection) => void;
 };
 
-function Header({ isSidebarOpen, onMenuClick }: HeaderProps) {
+function Header({ isSidebarOpen, onMenuClick, activeSection, onSectionChange }: HeaderProps) {
 	return (
 		<header className="header">
 			<button
@@ -27,15 +30,27 @@ function Header({ isSidebarOpen, onMenuClick }: HeaderProps) {
 				<img className="brand-logo" src={logoImage} alt="EndruBet" />
 			</h1>
 			<nav className="main-nav">
-				<button className="nav-pill  active" type="button">
+				<button
+					className={`nav-pill ${activeSection === 'casino' ? 'active' : ''} `}
+					type="button"
+					onClick={() => onSectionChange('casino')}
+				>
 					<Spade size={16} />
 					Casino
 				</button>
-				<button className="nav-pill" type="button">
+				<button
+					className={`nav-pill ${activeSection === 'sports' ? 'active' : ''} `}
+					type="button"
+					onClick={() => onSectionChange('sports')}
+				>
 					<RugbyBall size={16} />
 					Sports
 				</button>
-				<button className="nav-pill" type="button">
+				<button
+					className={`nav-pill ${activeSection === 'live-casino' ? 'active' : ''} `}
+					type="button"
+					onClick={() => onSectionChange('live-casino')}
+				>
 					<PlayingCardsFan size={16} />
 					Live Casino
 				</button>

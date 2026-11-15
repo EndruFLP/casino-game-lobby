@@ -1,0 +1,12 @@
+.app-body {
+	display: flex;
+}
+
+.main-content {
+	flex: 1;
+	min-width: 0;
+	height: calc(100vh - 72px);
+	padding: 18px 23px;
+	overflow-y: auto;
+	background: #070b14;
+}

@@ -1,0 +1,13 @@
+.main-content h2 {
+	text-align: center;
+	font-size: 30px;
+	color: #4de8f5;
+	text-shadow: 0 2px 12px rgba(186, 192, 188, 0.85);
+}
+
+.game-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	gap: 14px;
+	margin-top: 16px;
+}
