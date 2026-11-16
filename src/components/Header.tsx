@@ -6,15 +6,25 @@ import avatarImage from '../assets/avatar.png';
 import logoImage from '../assets/logo.png';
 import type { MainSection } from '../types/main-section';
 import WalletMenu from './WalletMenu';
+import BonusCountdown from './BonusCountdown';
 
 type HeaderProps = {
 	isSidebarOpen: boolean;
 	onMenuClick: () => void;
 	activeSection: MainSection;
 	onSectionChange: (section: MainSection) => void;
+	onOpenWithdraw: () => void;
+	onOpenDeposit: () => void;
 };
 
-function Header({ isSidebarOpen, onMenuClick, activeSection, onSectionChange }: HeaderProps) {
+function Header({
+	isSidebarOpen,
+	onMenuClick,
+	activeSection,
+	onSectionChange,
+	onOpenWithdraw,
+	onOpenDeposit,
+}: HeaderProps) {
 	return (
 		<header className="header">
 			<button
@@ -58,22 +68,25 @@ function Header({ isSidebarOpen, onMenuClick, activeSection, onSectionChange }: 
 			</nav>
 
 			<div className="bonus">
-				<img src={giftImage} alt="" className="bonus-gift" />
+				<div className="bonus-gift-wrap">
+					<span className="bonus-gift-glow" aria-hidden="true" />
+					<img src={giftImage} alt="" className="bonus-gift" />
+				</div>
 				<div className="bonus-text">
 					<strong>Claim Bonus</strong>
-					<span>02 : 38 : 04</span>
+					<BonusCountdown />
 				</div>
 			</div>
 
 			<div className="header-actions">
 				<WalletMenu />
 
-				<button className="header-action-button" type="button">
+				<button className="header-action-button withdraw-button" type="button" onClick={onOpenWithdraw}>
 					<ArrowUpFromLine size={16} />
 					Withdraw
 				</button>
 
-				<button className="header-action-button deposit-button" type="button">
+				<button className="header-action-button deposit-button" type="button" onClick={onOpenDeposit}>
 					<Landmark size={16} />
 					Deposit
 				</button>

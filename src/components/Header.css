@@ -92,12 +92,41 @@
 	align-items: center;
 	gap: 1px;
 }
+
+.bonus-gift-wrap {
+	position: relative;
+	flex-shrink: 0;
+}
+.bonus-gift-glow {
+	position: absolute;
+	top: 50%;
+	left: 42%;
+	width: 120px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(42, 215, 232, 0.55) 0%,
+		rgba(24, 198, 234, 0.2) 45%,
+		transparent 72%
+	);
+	filter: blur(10px);
+	z-index: 0;
+	pointer-events: none;
+	animation: bonus-glow-pulse 2.4s ease-in-out infinite;
+}
+
 .bonus-gift {
+	position: relative;
+	z-index: 1;
 	width: 60px;
 	height: 60px;
 	object-fit: contain;
 	cursor: pointer;
+	animation: bonus-gift-pulse 2.4s ease-in-out infinite;
 }
+
 .bonus-text {
 	display: flex;
 	flex-direction: column;
@@ -110,6 +139,15 @@
 	font-size: 12px;
 	color: #8ea0c0;
 	letter-spacing: 0.08em;
+}
+
+.bonus-timer {
+	font-size: 14px;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.06em;
+	color: #4de8f5;
+	text-shadow: 0 0 14px rgba(42, 215, 232, 0.45);
 }
 
 .header-actions {
@@ -131,11 +169,34 @@
 	cursor: pointer;
 }
 
-.deposit-button {
+.deposit-button,
+.withdraw-button {
+	border-color: #0c6f8c;
+	background: linear-gradient(180deg, #1589a6 0%, #0e5f7a 100%);
+	color: #e8f4f7;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+	transition:
+		background 160ms ease,
+		border-color 160ms ease,
+		color 160ms ease,
+		box-shadow 160ms ease,
+		transform 160ms ease;
+}
+
+.deposit-button:hover,
+.withdraw-button:hover {
 	background: linear-gradient(180deg, #5ce8ff 0%, #18c6ea 100%);
 	border-color: #0c6f8c;
 	color: white;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.55),
+		0 0 14px rgba(24, 198, 234, 0.45);
+	transform: translateY(-1px);
+}
+
+.deposit-button:active,
+.withdraw-button:active {
+	transform: translateY(0) scale(0.98);
 }
 
 .profile-button {
@@ -165,5 +226,26 @@
 @media (max-width: 800px) {
 	.main-nav {
 		display: none;
+	}
+}
+
+@keyframes bonus-gift-pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.06);
+	}
+}
+@keyframes bonus-glow-pulse {
+	0%,
+	100% {
+		opacity: 0.75;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1.12);
 	}
 }
