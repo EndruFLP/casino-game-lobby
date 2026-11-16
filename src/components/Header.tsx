@@ -1,10 +1,11 @@
 import './Header.css';
-import { Spade, RugbyBall, PlayingCardsFan, Bitcoin, ChevronDown, ArrowUpFromLine, Landmark } from 'lucide-react';
+import { Spade, RugbyBall, PlayingCardsFan, ArrowUpFromLine, Landmark } from 'lucide-react';
 import NotificationsMenu from './NotificationsMenu';
 import giftImage from '../assets/giftBox.png';
 import avatarImage from '../assets/avatar.png';
 import logoImage from '../assets/logo.png';
 import type { MainSection } from '../types/main-section';
+import WalletMenu from './WalletMenu';
 
 type HeaderProps = {
 	isSidebarOpen: boolean;
@@ -65,11 +66,7 @@ function Header({ isSidebarOpen, onMenuClick, activeSection, onSectionChange }: 
 			</div>
 
 			<div className="header-actions">
-				<button className="wallet-selector" type="button" aria-haspopup="listbox" aria-expanded="false">
-					<Bitcoin size={16} />
-					<span>$12,800</span>
-					<ChevronDown size={12} />
-				</button>
+				<WalletMenu />
 
 				<button className="header-action-button" type="button">
 					<ArrowUpFromLine size={16} />

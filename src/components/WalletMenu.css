@@ -1,0 +1,146 @@
+/* Aceeași paletă ca header: notificări (hover) + Casino/Deposit (activ) */
+.wallet-menu {
+	position: relative;
+}
+
+.wallet-panel {
+	position: absolute;
+	top: calc(100% + 5px);
+	right: 0;
+	width: 220px;
+	margin: 0;
+	padding: 6px;
+	list-style: none;
+	border: 1px solid rgba(77, 232, 245, 0.15);
+	border-radius: 10px;
+	background: linear-gradient(145deg, #171f2d, #101620);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+	z-index: 120;
+}
+
+.wallet-selector {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 10px;
+	font-weight: 700;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	background: #1a2130;
+	color: white;
+	cursor: pointer;
+	transition:
+		background-color 160ms ease,
+		border-color 160ms ease,
+		color 160ms ease,
+		box-shadow 160ms ease,
+		transform 160ms ease;
+}
+
+/* Identic cu .notification-button:hover */
+.wallet-selector:hover,
+.wallet-selector[aria-expanded='true'] {
+	border-color: rgba(42, 215, 232, 0.25);
+	background: rgba(42, 215, 232, 0.1);
+	color: #4de8f5;
+	box-shadow: 0 0 12px rgba(42, 215, 232, 0.14);
+}
+
+.wallet-selector:active {
+	transform: scale(0.98);
+}
+
+.wallet-chevron {
+	transition: transform 160ms ease;
+}
+
+.wallet-chevron--open {
+	transform: rotate(180deg);
+}
+
+.wallet-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	background: transparent;
+	color: #f4f7fb;
+	cursor: pointer;
+	text-align: left;
+	transition:
+		background 160ms ease,
+		border-color 160ms ease,
+		color 160ms ease,
+		box-shadow 160ms ease;
+}
+
+/* Hover listă: același turcoaz ca notificările, fără gradient plin */
+.wallet-option:hover {
+	border-color: rgba(42, 215, 232, 0.25);
+	background: rgba(42, 215, 232, 0.1);
+	color: #4de8f5;
+	box-shadow: 0 0 12px rgba(42, 215, 232, 0.14);
+}
+
+.wallet-option:hover .wallet-option-balance {
+	color: #8fe7ee;
+}
+
+/* Identic cu .nav-pill.active și .deposit-button */
+.wallet-option[aria-selected='true'] {
+	background: linear-gradient(180deg, #5ce8ff 0%, #18c6ea 100%);
+	border-color: #0c6f8c;
+	color: white;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.wallet-option[aria-selected='true']:hover {
+	background: linear-gradient(180deg, #5ce8ff 0%, #18c6ea 100%);
+	border-color: #0c6f8c;
+	color: white;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.wallet-option[aria-selected='true'] .wallet-option-balance {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.wallet-option-label {
+	flex: 1;
+	font-size: 13px;
+}
+
+.wallet-option-balance {
+	font-size: 12px;
+	font-weight: 600;
+	color: #8f9bb0;
+}
+
+.wallet-icon {
+	display: inline-flex;
+	flex-shrink: 0;
+}
+
+/* Brand crypto — doar iconițele, nu hover-ul */
+.wallet-icon--btc {
+	color: #f7931a;
+}
+
+.wallet-icon--eth {
+	color: #627eea;
+}
+
+.wallet-icon--usdt {
+	color: #26a17b;
+}
+
+.wallet-icon--ltc {
+	color: #345d9d;
+}
+
+.wallet-icon--sol {
+	color: #9945ff;
+}

@@ -119,22 +119,6 @@
 	gap: 8px;
 }
 
-.wallet-selector {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 8px 10px;
-	border: 1px solid rgba(255, 255, 255, 0.05);
-	border-radius: 8px;
-	background: #1a2130;
-	color: white;
-	cursor: pointer;
-}
-
-.wallet-selector > svg:first-child {
-	color: #9f8cff;
-}
-
 .header-action-button {
 	display: inline-flex;
 	align-items: center;
